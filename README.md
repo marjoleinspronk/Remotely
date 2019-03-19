@@ -1,13 +1,13 @@
-### What it Remotely?
+<p align="center">
+  <img src="static/img/remotely.png">
+</p>
+
+### What is Remotely?
 
 Remotely is a web app developed to help you (remote worker or traveler) find the best coffee shop to work from.    
 It uses your input and matches it to coffee shops based on reviews by previous customers. Natural language processing helps determine which locations you might like. More specifically, the app uses a word2vec model to find the coffeeshops most similar to your input.    
 
 Currently, the app only works for New York City, but it will be scaled to other cities in the future!
-
-<p align="center">
-  <img src="static/img/remotely.png">
-</p>
 
 The app's components:
 
