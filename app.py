@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
 # Import
-#import requests
-
 from flask import Flask, render_template, flash, request, redirect, url_for
 import flask, sklearn, os, string, re, gensim
 import pandas as pd
