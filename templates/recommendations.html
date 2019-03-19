@@ -1,0 +1,80 @@
+<style>
+  body{
+    background-image:url('/static/img/rawpixel-623444-unsplash.jpg');
+    width:100%;
+    background-size: cover;
+  }
+  @media only screen and (max-width: 600px) {
+      body {
+          background-size:400px;
+      }
+  }
+ .main h1 {
+ font-size: 3.5em;
+ font-family: 'Nunito Sans';
+ color: #2E3759;
+ }
+ .main h2 {
+ font-size: 2em;
+ font-family: 'Nunito Sans';
+ color: #2E3759;
+ }
+ .main h3 {
+ font-size: 1.5em;
+ font-family: 'Nunito Sans';
+ color: #2E3759;
+ }
+ .main p {
+ font-size:1em;
+ font-family: 'Nunito Sans';
+ color: #2E3759;
+ }
+
+</style>
+
+
+<title>Title</title>
+</head>
+<body>
+<div class="main">
+  <div style="text-align:center">
+  <br><br>
+  <div class="starter-template">
+
+<br><br>
+<h2>You might like these coffeeshops!</h2>
+<br>
+
+    <title>Find the perfect coffeeshop</title>
+  </head>
+  <body>
+
+      <!-- Page Features -->
+      <div class="mt-5 card-deck">
+
+      <h3>Best match:</h3>
+      <a href="{{ match_url }}" style="color:#5DD9C1">
+      <h2> {{ match }} </h2>
+      </a>
+
+<br>
+
+      <h3>We also recommend:</h3>
+      <a href="{{ match_url2 }}" style="color:#5DD9C1">
+      <h2> {{ match2 }} </h2>
+      </a>
+      <h3>and</h3>
+      <a href="{{ match_url3 }}" style="color:#5DD9C1">
+      <h2> {{ match3 }} </h2>
+      </a>
+
+<br><br>
+
+      <h3> You searched for these terms:</h3>
+      <h3> {{ sentence }} </h3>
+
+<br><br>
+
+
+</div>
+</body>

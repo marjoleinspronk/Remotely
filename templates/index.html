@@ -1,0 +1,136 @@
+<html>
+<head>
+
+  <style>
+
+  body{
+      background-image:url('/static/img/man_with_mac.jpg');
+      width:100%;
+      background-size: cover;
+    }
+    @media only screen and (max-width: 600px) {
+      body {
+        background-size: auto;
+      }
+    }
+    .main {
+      background-color: rgba(255, 255, 255, 0.5);
+      margin-top: 300px;
+      margin-bottom: 100px;
+    }
+    .main h1 {
+      font-size: 3.5em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main h2 {
+      font-size: 2em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main h3 {
+      font-size: 2em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main p {
+      font-size:1em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main form {
+      font-size:1em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main table {
+      font-size:1em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    .main td {
+      font-size:1em;
+      font-family: 'Nunito Sans';
+      color: #10857E;
+    }
+    button {
+      padding: 1vh 2vw;
+      background-color: #10857E;
+      color: white;
+      border-radius: 20px;
+      border-color: white;
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: rgba(0,0,0,0);
+      color: #10857E;
+      border-color: #10857E;
+    }
+    input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 1px solid black;
+    }
+    select {
+      font-size: 1.3em;
+      padding:10px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 10px;
+      background-color: #10857E;
+      color: #10857E;
+      outline: none;
+      border: none;
+    }
+    hr{
+      border: 0;
+      height: 3px;
+      background: #10857E;
+    }
+
+  </style>
+
+</head>
+
+<div class="overlay">
+
+</div>
+
+
+<title>Titler</title>
+</head>
+<body>
+
+
+    <div class="main">
+      <div style="text-align:center">
+      <img src="static/img/remotely.png" style="width: 30%">
+      <br><br><br>
+      <div class="starter-template">
+
+        <h1>Find your perfect coffee shop</h1>
+        <h2>to reach peak productivity</h2>
+
+        <!--<img src="/static/img/remotely.png" alt="Coffee" width="20%" height="auto">-->
+
+
+      </div>
+      <br><br><br>
+      <div class='buttons'>
+
+    <!-- This is what takes you to my next page recommender.html -->
+      <form action='/recommender', method='POST'>
+
+        <button type="submit">Yes, let's try it!</button>
+      </form>
+
+       <br><br><br>
+
+    </div>
+    </div>
+  </body>

@@ -1,0 +1,172 @@
+<html>
+<head>
+
+  <style>
+
+  body{
+    background-image:url('/static/img/rawpixel-623444-unsplash.jpg');
+    width:100%;
+    background-size: cover;
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-size: 400px;
+    }
+  }
+  .main h1 {
+    font-size: 3.5em;
+    font-family: 'Nunito Sans';
+    color: #2E3759;
+  }
+  .main h2 {
+    font-size: 2em;
+    font-family: 'Nunito Sans';
+    color: #2E3759;
+  }
+  .main h3 {
+    font-size: 1.5em;
+    font-family: 'Nunito Sans';
+    color: #2E3759;
+  }
+  .main h4 {
+    font-size:1em;
+    font-family: 'Nunito Sans';
+    color: #2E3759;
+  }
+  .main p {
+    font-size:1em;
+    font-family: 'Nunito Sans';
+    color: #2E3759;
+  }
+  .main form {
+  font-size:1em;
+  font-family: 'Nunito Sans';
+  color: #2E3759;
+  }
+  .main table {
+  font-size:1em;
+  font-family: 'Nunito Sans';
+  color: #2E3759;
+  }
+  .main td {
+  font-size:1em;
+  font-family: 'Nunito Sans';
+  color: #2E3759;
+  }
+      button {
+          padding: 1vh 2vw;
+          background-color: #10857E;
+          color: white;
+          border-radius: 20px;
+          border-color: white;
+          padding-left: 18px;
+          padding-right: 18px;
+          font-size: 24px;
+          font-weight: bold;
+      }
+      button:hover {
+          background-color: rgba(0,0,0,0);
+          color: #10857E;
+          border-color: #10857E;
+      }
+      input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 1px solid black;
+      }
+      select {
+        font-size: 1.3em;
+        padding:10px;
+        -webkit-appearance: none;
+               -moz-appearance: none;
+                appearance: none;
+                margin: 10px;
+                background-color: #10857E;
+                color: #10857E;
+                outline: none;
+                border: none;
+              }
+      hr{
+        border: 0;
+          height: 3px;
+          background: #10857E;
+      }
+  </style>
+
+
+  <title>Remotely</title>
+
+</head>
+
+<body>
+
+  <div class="main">
+    <div style="text-align:center">
+      <br><br>
+      <img src="static/img/remotely.png" style="width: 20%">
+      <div class="starter-template">
+
+
+      </div>
+      <br><br>
+
+      <form action='/recommendations', method='POST'>
+
+        <div><h3>Please indicate the following for your perfect workplace:</h3></div>
+
+        <h4 class="text-faded mb-4">How important is finding a quiet space?</h4>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="3" value="2" class="slider" id="Range1" name="quiet_importance">
+          <p><span id="slide1"></span>/3 (1: not important, 3: very important)</p>
+        </div>
+
+        <h4 class="text-faded mb-4">Do you need to charge your device?</h4>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="2" value=".5" class="slider" id="Range3" name="socket_importance">
+          <p><span id="slide3"></span>/1 (1: no, 2: yes)</p>
+        </div>
+
+        <script>
+        var slider3 = document.getElementById("Range1");
+        var output3 = document.getElementById("slide1");
+        output3.innerHTML = slider3.value;
+        slider3.oninput = function() {
+          output3.innerHTML = this.value;
+        }
+        </script>
+        <script>
+        var slider5 = document.getElementById("Range3");
+        var output5 = document.getElementById("slide3");
+        output5.innerHTML = slider5.value;
+        slider5.oninput = function() {
+          output5.innerHTML = this.value;
+        }
+        </script>
+
+        <br><br>
+
+        <div><h3>What else are you looking for?</h3></div>
+        <div><p>(e.g. friendly staff, deconstructed latte)</p></div>
+        <p>
+          <input class="input" type="textarea" name="user_shop_wishes">
+        </p>
+        <br><br>
+
+        <div ><h3>What is your zipcode?</h3></div>
+        <p>
+          <input class="input" type="textarea" name="user_zipcode">
+        </p>
+        <br><br>
+
+
+        <br><br><br>
+        <button type="submit">Find my destination!</button>
+
+      </form>
+
+
+    </div>
+  </div>
+</body>
+</html>
