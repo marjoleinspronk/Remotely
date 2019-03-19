@@ -1,8 +1,8 @@
 Remotely is a web app developed to help you find the best coffee shop to work from.    
-It uses your user input and matches it to coffee shop based on reviews by previous customers.  
-Currently, the app only works for New York City, but it will be scaled up to other cities in the future!
+It uses your user input and matches it to coffee shops based on reviews by previous customers.  
+Currently, the app only works for New York City, but it will be scaled to other cities in the future!
 
-The components:
+The app's components:
 
 1. app.py file
   - Has all the functions to run the app
