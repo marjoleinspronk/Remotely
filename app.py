@@ -2,17 +2,15 @@
 
 # Import
 #import requests
-import pickle
-import flask, sklearn, os, string, re, gensim
+
 from flask import Flask, render_template, flash, request, redirect, url_for
-#from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+import flask, sklearn, os, string, re, gensim
 import pandas as pd
+import pickle
 import numpy as np
 from sklearn.externals import joblib
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 from sklearn.metrics.pairwise import cosine_similarity
-#pd.options.display.max_columns=25
-
 from string import digits
 from uszipcode import SearchEngine   # to convert zipcode to longitude and latitude
 from haversine import haversine   # to calculate euclidian distance from longitude and latitude
@@ -87,6 +85,7 @@ def cos_all (x,y):
     cs = cosine_similarity(y.reshape(1,-1), x.reshape(1,-1))
     return cs
 
+
 # Input processing function
 def process_input(sentence, quiet_importance, user_socket, user_zipcode):
     vector_userinput = process_string_to_normvector(sentence, quiet_importance, user_socket)
@@ -128,6 +127,7 @@ def not_available(s):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+
 
 # Home page redirects to recommender.html where the user fills out survey
 @app.route('/recommender', methods=['GET', 'POST'])

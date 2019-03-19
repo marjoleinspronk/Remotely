@@ -1,24 +1,21 @@
-The components you need for a flask app:
+Remotely is a web app developed to help you find the best coffee shop to work from.    
+It uses your user input and matches it to coffee shop based on reviews by previous customers.  
+Currently, the app only works for New York City, but it will be scaled up to other cities in the future!
+
+The components:
 
 1. app.py file
-  - Has all the functions and data you need to run your app
+  - Has all the functions to run the app
   - Routes (through @app.route) to pages and specifies what templates to use with render_template()
-  - At the end make sure you have
+  - At the end this makes sure it runs:  
 ```  
   if __name__ == '__main__':
       app.run(host='0.0.0.0', port=8080, debug=True)
 ```
 
-      Or else your app won't run!
-      Run your app by entering "python app.py" in terminal
+2. .html files in templates folder (to specify how the pages look and what data and functions are passed through the app.)
+  - index.html is the home page
+  - recommender.html is the form the user fills out
+  - recommendations.html does the bulk of the work, passing the user input through the recommender function and outputting the recommendation
 
-2. .html files in templates folder
-  - These files specify
-    - How your page looks
-    - What data and functions are passed through your app
-  - For my app,
-    - index.html is just a basic home page that doesn't really do anything
-    - recommender.html is the form the user fills out
-    - recommendations.html does the bulk of the work with like 4 lines of code, passing the user input through my recommender function and outputting the recommendation
-
-3. the static folder has stuff you want on your app like images, fonts, css... you can download css templates from Bootstrap to make your app look good (https://getbootstrap.com/docs/4.1/examples/)
+3. the static folder has images, fonts, css, etc. Other Bootstrap templates can be downloaded to make the app look better: (https://getbootstrap.com/docs/4.1/examples/)

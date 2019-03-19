@@ -10,11 +10,9 @@ import pickle
 #import keras   # used in Jupyter notebook's extra exploratory analysis
 
 
-
 ### Load scraped data and preprocess
 scrape_path = '~/Insight/project/scraped_data/'
 reviews = pd.read_csv(scrape_path+'New%20York%2C%20NY&attrs20190122-013855.csv')
-
 
 
 ### Clean review text
@@ -38,14 +36,12 @@ cleanreviews = standardize_text(reviews, "review-text")
 from nltk.tokenize import RegexpTokenizer
 
 tokenizer = RegexpTokenizer(r'\w+')   # separate sentences into different words
-
 cleanreviews["tokens"] = cleanreviews["review-text"].apply(tokenizer.tokenize)
 
 # Remove stop words
 from nltk.corpus import stopwords
 nltk.download('stopwords')
 stop = stopwords.words('english')
-
 cleanreviews['nostop'] = cleanreviews['tokens'].apply(lambda x: [item for item in x if item not in stop])
 
 # Lemmatize
@@ -59,7 +55,6 @@ def lemmatize_text(text):
 cleanreviews['lemmas'] = cleanreviews['nostop'].apply(lemmatize_text)
 
 
-
 ### Prepare dataframe for modeling
 coffeeshops = cleanreviews.groupby(['biz_url']).agg({'review-rating': 'mean', 'lemmas': lambda x: list(x)})
 
@@ -70,24 +65,21 @@ def flatten(inputdata):
 
 coffeeshops['shopdoc'] = coffeeshops['lemmas'].apply(flatten)
 
-
 # Get documents from pandas dataframe to make the vectors. This will be a list of lists (one list per shop)
 sentences_shop = coffeeshops['shopdoc'].tolist()
-
 
 
 ### Create and train word2vec model
 from gensim.models import Word2Vec
 
 # Build model
-#model = Word2Vec(sentences, size=100, window=5, min_count=3, workers=4)   # size and window for CBOW
-model = Word2Vec(sentences, size=150, window=10, min_count=2, workers=10)  # size and window for skipgram
+#model = Word2Vec(sentences, size=100, window=5, min_count=3, workers=4)   # size and window for CBOW model
+model = Word2Vec(sentences, size=150, window=10, min_count=2, workers=10)  # size and window for skipgram model
 # Train model
 model.train(sentences_shop, total_examples=len(sentences_shop), epochs=10)
 
 # Save model
 model.save("shop2vec_NYC_v1.model")
-
 
 
 ### Create vectors for shops
